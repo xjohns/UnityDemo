@@ -1,26 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
+public class Boundary
+{
+	public float xMin, xMax, zMin, zMax;
+}
+
 public class PlayerController : MonoBehaviour {
-	[System.Serializable]
-	public class Boundary
-	{
-		public float xMin;
-		public float xMax;
-		public float zMin;
-		public float zMax;
-	}
 	public float speed;
 	public Boundary boundary;
+	public GameObject shot;//子弹的预制体
+	public Transform shotSpawn;//子弹生成的位置
+	public float fireRate;//子弹的发射率
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+	private float nextFire;
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetButton ("Fire1") && Time.time > nextFire) {
+			nextFire = Time.time + fireRate;
+			Instantiate (shot, shotSpawn.position, shotSpawn.rotation);//实例化生成一枚子弹
+			GetComponent<AudioSource>().Play();//生成子弹的时候播放音效
+		}
 	}
 
 	void FixedUpdate(){

@@ -4,7 +4,7 @@
     <Files>
       <File FileName="Assets\Scripts\GameController.cs" Line="39" Column="28" />
       <File FileName="Assets\Scripts\DestroyByContact.cs" Line="35" Column="68" />
-      <File FileName="Assets\Scripts\EvasiveManeuver.cs" Line="13" Column="24" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="7" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
